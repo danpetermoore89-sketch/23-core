@@ -25,5 +25,6 @@ final class Plugin {
 		Role_Manager::maybe_synchronize();
 		Editor_Governance::register();
 		Navigation_Access::register();
+		Navigation_Admin::register();
 	}
 }

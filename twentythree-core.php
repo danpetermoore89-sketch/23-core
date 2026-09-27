@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       23 Core
  * Description:       Shared permissions and editorial governance for websites managed by 23 Web.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            23 Web
@@ -17,12 +17,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'TWENTYTHREE_CORE_VERSION', '0.1.0' );
+define( 'TWENTYTHREE_CORE_VERSION', '0.2.0' );
 define( 'TWENTYTHREE_CORE_FILE', __FILE__ );
 
 require_once __DIR__ . '/src/class-role-manager.php';
 require_once __DIR__ . '/src/class-editor-governance.php';
 require_once __DIR__ . '/src/class-navigation-access.php';
+require_once __DIR__ . '/src/class-navigation-content.php';
+require_once __DIR__ . '/src/class-navigation-admin.php';
 require_once __DIR__ . '/src/class-plugin.php';
 
 register_activation_hook( __FILE__, array( Role_Manager::class, 'activate' ) );

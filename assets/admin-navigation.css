@@ -1,0 +1,120 @@
+.twentythree-navigation-wrap {
+	max-width: 72rem;
+}
+
+.twentythree-navigation-picker {
+	display: flex;
+	align-items: end;
+	gap: 0.75rem;
+	margin: 1.5rem 0;
+}
+
+.twentythree-navigation-picker label,
+.twentythree-navigation-item label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 0.25rem;
+}
+
+.twentythree-navigation-picker select {
+	min-width: min(24rem, 70vw);
+}
+
+.twentythree-navigation-items {
+	display: grid;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+.twentythree-navigation-item {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #2271b1;
+	box-sizing: border-box;
+	padding: 1rem;
+}
+
+.twentythree-navigation-item.is-child {
+	margin-left: 2.5rem;
+	border-left-color: #72aee6;
+}
+
+.twentythree-navigation-item.is-preserved {
+	border-left-color: #787c82;
+	background: #f6f7f7;
+}
+
+.twentythree-navigation-item__fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem 1rem;
+}
+
+.twentythree-navigation-item__fields p {
+	margin: 0;
+}
+
+.twentythree-navigation-item__fields input[type="text"],
+.twentythree-navigation-item__fields select {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+}
+
+.twentythree-navigation-item__fields .description {
+	display: block;
+	margin-top: 0.25rem;
+}
+
+.twentythree-navigation-item__checkbox {
+	align-self: end;
+	padding-bottom: 0.4rem;
+}
+
+.twentythree-navigation-item__checkbox label {
+	font-weight: 400;
+}
+
+.twentythree-navigation-item__preserved {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+}
+
+.twentythree-navigation-item__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 1rem;
+}
+
+.twentythree-navigation-item__actions .button-link-delete {
+	margin-left: auto;
+}
+
+@media screen and (max-width: 782px) {
+	.twentythree-navigation-picker {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.twentythree-navigation-picker select {
+		min-width: 0;
+		width: 100%;
+	}
+
+	.twentythree-navigation-item.is-child {
+		margin-left: 0;
+		border-left-width: 8px;
+	}
+
+	.twentythree-navigation-item__fields {
+		grid-template-columns: 1fr;
+	}
+
+	.twentythree-navigation-item__actions .button,
+	.twentythree-navigation-item__actions .button-link-delete {
+		min-height: 44px;
+	}
+}

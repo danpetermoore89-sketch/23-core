@@ -12,7 +12,7 @@ This document is the permissions contract for 23 Core. The plugin uses capabilit
 | Approved page sections | Insert, reorder, remove and edit | Insert, reorder, remove and edit |
 | Content inside approved sections | Edit text, images, alternative text and links | Edit text, images, alternative text and links |
 | Locked block structures | Lock and unlock | Use locked structures; cannot lock or unlock |
-| Navigation content | Edit through WordPress interfaces that can be safely isolated from structural controls | Granted the dedicated `twentythree_manage_navigation` capability. Navigation data may be edited through supported REST-based or future isolated interfaces, but the structural Site Editor is not exposed |
+| Navigation content | Edit through 23 Core Navigation screen, REST API or Site Editor | Edit existing navigation entities through the dedicated 23 Core Navigation screen; unrestricted REST writes and the structural Site Editor are not exposed |
 | Navigation structures | Create and delete navigation entities | Not allowed |
 | Templates and template parts | Full access | Not allowed |
 | Global styles | Full access | Not allowed |
@@ -37,7 +37,9 @@ This document is the permissions contract for 23 Core. The plugin uses capabilit
 
 WordPress currently maps every primitive capability for the `wp_navigation` post type to `edit_theme_options`. Granting that capability to a Site Manager would also expose structural Site Editor areas, so 23 Core does not grant it. Instead, the plugin maps navigation content operations to dedicated capabilities while keeping template, template-part and global-style endpoints restricted.
 
-The WordPress Site Editor itself is therefore Administrator-only. A Site Manager can use navigation editing only through an interface that is isolated to `wp_navigation` content and honours the dedicated capabilities. 23 Core Phase 1 establishes and tests that capability/API boundary; it does not add a custom navigation interface.
+The WordPress Site Editor itself is therefore Administrator-only. The 23 Core Navigation screen edits only the contents of existing `wp_navigation` entities and honours the dedicated capabilities. It does not create or delete navigation entities, expose theme settings, or reproduce the structural Site Editor. Raw navigation REST writes are also restricted to structural administrators so they cannot bypass the screen's validation.
+
+The screen supports page links, post links, custom URLs, editable labels and one level of submenu nesting. Unsupported block branches remain in the navigation as protected items; their markup is recovered from the current database value rather than accepted from the browser.
 
 ## Structural protection model
 

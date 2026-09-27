@@ -1,0 +1,21 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.5",
+    "wp": "latest"
+  },
+  "steps": [
+    {
+      "step": "activatePlugin",
+      "pluginPath": "twentythree-core/twentythree-core.php"
+    },
+    {
+      "step": "activateTheme",
+      "themeFolderName": "twentythree-theme"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-content/plugins/twentythree-core/tests/runtime.php';"
+    }
+  ]
+}
